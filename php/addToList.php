@@ -16,11 +16,14 @@ $itemName = filter_input(INPUT_GET, "itemName", FILTER_SANITIZE_SPECIAL_CHARS);
 $price = filter_input(INPUT_GET, "price", FILTER_VALIDATE_FLOAT);
 
 //Checks if the user is logged in
-if ($_SESSION['username'] != null){
-$username = $_SESSION['username'];}
-else{
+
+if (empty($_SESSION['username'])){
     echo "You need to be logged in";
-    exit();
+    exit();    
+}
+else{
+    $username = $_SESSION['username'];
+    $once = false;
 }
 
 

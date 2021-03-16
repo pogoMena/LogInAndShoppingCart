@@ -10,9 +10,13 @@ window.addEventListener("load", function() {
     //recieves the text from the php file after handling the ajax request
     function success(text) {
         
-        if (text = "You need to be logged in"){
+        if (text === "You need to be logged in"){
         let span = document.getElementById("idk");
         span.innerHTML = text;
+        }
+        else{
+            let span = document.getElementById("idk");
+            span.innerHTML = text;
         }
         
 
